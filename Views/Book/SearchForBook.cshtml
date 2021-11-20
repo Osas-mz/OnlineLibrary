@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "SearchForBook";
+}
+@{
+
+
+    var templates = new List<SelectListItem>
+{
+                    new SelectListItem { Value = "1", Text = "SOCIAL MEDIA AND LIVE CHAT" },
+                    new SelectListItem { Value = "2", Text = "BA AND GW" },
+                    new SelectListItem { Value = "3", Text = "E-MARKETING" },
+                    new SelectListItem { Value = "4", Text = "MAILERS CHECK LIST" },
+                    new SelectListItem { Value = "5", Text = "PRE AND POST" },
+                    new SelectListItem { Value = "6", Text = "RESOLUTION" },
+
+                };
+}
+
+<h1>SearchForBook</h1>
+
+<form id="account" method="post">
+
+    <div class="form-group">
+        <label class="tplat1" readonly></label>
+        <select name="searchbox" class="tplat2" >
+            <option value="">Please select one</option>
+            <option value="title">Title</option> 
+            <option value="ISBN">ISBN</option>
+            <option value="Publisher">Publisher</option>
+            <option value="title">Date Added</option>
+        </select>
+
+    </div>
+    <div class="form-group">
+        <label></label>
+        <input name="searchString" style="width:400px;" class="form-control" />
+
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Search" class="btn btn-primary" />
+    </div>
+</form>

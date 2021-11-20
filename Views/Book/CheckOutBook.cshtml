@@ -1,0 +1,71 @@
+﻿@model OnlineLibrary.Models.Book
+
+@{
+    ViewData["Title"] = "CheckOutBook";
+}
+
+<h1>CheckOutBook</h1>
+
+<h4>Book</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CheckOutBook">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ISBN" class="control-label"></label>
+                <input asp-for="ISBN" class="form-control" />
+                <span asp-validation-for="ISBN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RevisionNumber" class="control-label"></label>
+                <input asp-for="RevisionNumber" class="form-control" />
+                <span asp-validation-for="RevisionNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Publishdate" class="control-label"></label>
+                <input asp-for="Publishdate" class="form-control" />
+                <span asp-validation-for="Publishdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Publisher" class="control-label"></label>
+                <input asp-for="Publisher" class="form-control" />
+                <span asp-validation-for="Publisher" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Authors" class="control-label"></label>
+                <input asp-for="Authors" class="form-control" />
+                <span asp-validation-for="Authors" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateAdded" class="control-label"></label>
+                <input asp-for="DateAdded" class="form-control" />
+                <span asp-validation-for="DateAdded" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookGenre" class="control-label"></label>
+                <input asp-for="BookGenre" class="form-control" />
+                <span asp-validation-for="BookGenre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookImageUrl" class="control-label"></label>
+                <input asp-for="BookImageUrl" class="form-control" />
+                <span asp-validation-for="BookImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Check Out" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewData["Title"] = "CreateBook";
+}
+@model OnlineLibrary.Models.Book
+
+<h1>CreateBook</h1>
+
+
+<div class="jumbotron">
+    <form enctype="multipart/form-data" method="post">
+        <h1>Create New Book</h1>
+        <hr />
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Title"></label>
+            <input style="width:400px;" asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Publisher"></label>
+            <input style="width:400px;" asp-for="Publisher" class="form-control" />
+            <span asp-validation-for="Publisher" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="RevisionNumber"></label>
+            <input style="width:400px;" asp-for="RevisionNumber" class="form-control" />
+            <span asp-validation-for="RevisionNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Authors"></label>
+            <input style="width:400px;" asp-for="Authors" class="form-control" />
+            <span asp-validation-for="Authors" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ISBN"></label>
+            <input style="width:400px;" asp-for="ISBN" class="form-control" />
+            <span asp-validation-for="ISBN" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="BookGenre"></label>
+            <input style="width:400px;" asp-for="BookGenre" class="form-control" />
+            <span asp-validation-for="BookGenre" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Publishdate"></label>
+            <input style="width:400px;" asp-for="Publishdate" class="form-control" />
+            <span asp-validation-for="Publishdate" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="BookImage" class="control-label"></label>
+            <div class="custom-file">
+                <input asp-for="BookImage" type="file" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="customFile">Choose file</label>
+            </div>
+            <span asp-validation-for="BookImage" class="text-danger"></span>
+        </div>
+
+        <br />
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        // Add the following code if you want the name of the file appear on select
+        $(".custom-file-input").on("change", function () {
+            var fileName = $(this).val().split("\\").pop();
+            $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+        });
+    </script>
+}
